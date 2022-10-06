@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cd "$(dirname $(realpath $0))"
+
+export PATH=${PATH}:/home/aaron/go/bin/
+
+ufo gos https://ufo.k0s.io

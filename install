@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+NAME=$(basename $(realpath .))
+sudo cp systa.service /etc/systemd/system/$NAME.service
+sudo sed -i /etc/systemd/system/$NAME.service -e "s,%PWD%,${PWD},g"
+sudo sed -i /etc/systemd/system/$NAME.service -e "s,%NAME%,${NAME},g"
+sudo systemctl daemon-reload
+sudo systemctl restart $NAME

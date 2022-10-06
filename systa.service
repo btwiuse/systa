@@ -1,0 +1,12 @@
+[Unit]
+Description=%NAME% service
+After=network.target
+
+[Service]
+Type=simple
+User=aaron
+ExecStart=%PWD%/launch
+Restart=always # on-failure # or always, on-abort, etc
+
+[Install]
+WantedBy=multi-user.target
