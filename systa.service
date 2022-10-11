@@ -1,12 +1,15 @@
 [Unit]
 Description=%NAME% service
 After=network.target
+StartLimitIntervalSec=0
 
 [Service]
 Type=simple
 User=aaron
 ExecStart=%PWD%/launch
-Restart=always # on-failure # or always, on-abort, etc
+# on-failure # or always, on-abort, etc
+Restart=always
+RestartSec=1
 
 [Install]
 WantedBy=multi-user.target
